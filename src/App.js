@@ -1,20 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import LoginForm from './components/authorization/auth-form'
+import LoginPage from './components/authorization/auth-page'
 
 function App() {
   return (
-    <div className="App container">
-      <h1>RennScape</h1>
-      <Router>
-        <Switch>
-        <Route path="/login">
-          <LoginForm></LoginForm>
-        </Route>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+      <Route path="/login">
+        <LoginPage></LoginPage>
+      </Route>
+      </Switch>
+    </Router>
   );
 }
 
