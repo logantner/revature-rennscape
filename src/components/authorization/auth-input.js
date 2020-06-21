@@ -5,10 +5,10 @@ export default function LoginInput(props) {
     const identifier = `auth-${name}`;
     return (
         <div className="form-group">
-            <label htmlFor={identifier}><strong>{name}</strong></label>
+            {/* <label htmlFor={identifier}><strong>{name}</strong></label> */}
             <input 
                 type="text" 
-                placeholder={`Enter your ${name}`} 
+                placeholder={`${name}`} 
                 className="form-control" 
                 id={identifier}
                 name={name}
