@@ -25,11 +25,6 @@ export default class LoginPage extends React.Component {
                             RennScape
                         </div>
                         <div className="col-12 align-self-center login-form-box">
-                            {/* <h1>RennScape</h1> */}
-                            {/* <br/> */}
-                            {/* <div className="login-title text-center">
-                                RennScape
-                            </div> */}
                             <LoginForm></LoginForm>
                         </div>
                         <div className="col-12 align-self-end login-title-box">
