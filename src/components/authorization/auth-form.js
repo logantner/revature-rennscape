@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// import {domain} from '../../connection';
+import { connect } from "react-redux";
+// import {useDispatch} from 'react-redux'
+
+import {logIn} from '../../redux/actions/logger-actions'
 import LoginInput from "./auth-input"
 
-export default function LoginForm() {
+function LoginForm(props) {
     const [creds, setCreds] = useState({});
 
     const handleSubmit = (event) => {
@@ -12,15 +15,22 @@ export default function LoginForm() {
         axios.post("/auth/login", creds)
             .then((res) => {
                 console.log(res);
+                // console.log(props);
+                props.logIn();
             })
-            .catch(() => {console.error("Uh oh.")});
+            .catch((err) => {
+                if (err.response) {
+                    console.error(err.response.status);
+                } else {
+                    console.error(err);
+                }
+            });
     };
 
     const handleChange = (e) => {
         const inputValue = e.target.value;
         const inputField = e.target.name;
         setCreds({...creds, [inputField] : inputValue} );
-        // Dynamically changed keys in object must be wrapped in a bracket 
     }
 
     return (
@@ -33,3 +43,13 @@ export default function LoginForm() {
         </form>
     );
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+      logIn: () =>
+        dispatch(logIn()),
+        // dispatch({type: "LOG_IN"})
+    };
+  }
+  
+  export default connect(null, mapDispatchToProps)(LoginForm);

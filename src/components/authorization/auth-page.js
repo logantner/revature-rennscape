@@ -3,14 +3,14 @@ import LoginForm from './auth-form'
 import background from '../../img/Background.png'
 
 export default class LoginPage extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     // this.state = { mode: undefined } ;
-    // }
-
-    componentWillMount = () => {
+    constructor(props) {
+        super(props);
         document.body.style.backgroundImage = `url(${background})`
     }
+
+    // UNSAFE_componentWillMount = () => {
+    //     document.body.style.backgroundImage = `url(${background})`
+    // }
     
     componentWillUnmount = () => {
         document.body.style.backgroundImage = null;
