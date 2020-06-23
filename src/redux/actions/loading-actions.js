@@ -48,3 +48,10 @@ export const loadUsers = (users) => {
         users
     };
 }
+
+export const loadUserInfo = (userInfo) => {
+    return {
+        type: types.LOAD_USER_INFO,
+        userInfo
+    };
+}

@@ -8,7 +8,7 @@ import RankingsPage from './rankings/rankings-view'
 import UsersPage from './users/users-view'
 
 import * as loadingActions from '../redux/actions/loading-actions'
-import {getCharacters, getRankings, getUsers} from '../helpers/loading-helpers'
+import {getCharacters, getRankings, getUsers, getUserInfo} from '../helpers/loading-helpers'
 
 function MainPage(props) {
     let [loadingStatus, setLoadingStatus] = useState(0);
@@ -16,6 +16,9 @@ function MainPage(props) {
     useEffect(() => {
         const storeMainPageData = async () => {
             let status = await getRankings(props);
+            if (status === 200) {
+                status = await getUserInfo(props);
+            }
             if (status === 200) {
                 status = await getCharacters(props);
             }
@@ -71,6 +74,8 @@ function mapDispatchToProps(dispatch) {
             dispatch(loadingActions.loadRanksDefence(chars)),
         loadUsers: (chars) =>
             dispatch(loadingActions.loadUsers(chars)),
+        loadUserInfo: (chars) =>
+            dispatch(loadingActions.loadUserInfo(chars)),
     };
   }
   

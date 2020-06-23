@@ -60,3 +60,23 @@ export async function getUsers(props) {
         return status;
     }
 }
+
+export async function getUserInfo(props) {
+    let status;
+    try {
+        const response = await axios.get("/auth/status");
+        props.loadUserInfo({
+            username: response.data.username,
+            role: response.data.password
+        });
+        status = 200;
+    } catch (err) {
+        console.error(err);
+            if (err.response) {
+                status = 400;
+            }
+            status = 500;
+    } finally {
+        return status;
+    }
+}

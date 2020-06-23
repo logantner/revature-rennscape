@@ -8,6 +8,7 @@ import rankingsAttackLoaderReducer from './reducers/rankings-attack-loader'
 import rankingsStrengthLoaderReducer from './reducers/rankings-strength-loader'
 import rankingsDefenceLoaderReducer from './reducers/rankings-defence-loader'
 import usersLoaderReducer from './reducers/users-loader'
+import userInfoLoaderReducer from './reducers/user-info-loader'
 
 
 const allReducers = combineReducers({
@@ -19,6 +20,7 @@ const allReducers = combineReducers({
     rankingsStrength : rankingsStrengthLoaderReducer,
     rankingsDefence : rankingsDefenceLoaderReducer,
     users : usersLoaderReducer,
+    userInfo : userInfoLoaderReducer,
 })
 
 export const store = createStore(
