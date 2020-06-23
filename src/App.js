@@ -15,9 +15,9 @@ function App() {
         <Route path="/login">
           <LoginPage></LoginPage>
         </Route>
-        <Route exact path="/">
-          <MainPage></MainPage>
-        </Route>
+        <Route exact path="/" component={MainPage} />
+          {/* <MainPage></MainPage>
+        </Route> */}
       </Switch>
     </Router>
   );

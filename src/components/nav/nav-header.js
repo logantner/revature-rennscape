@@ -21,25 +21,36 @@ export default function NavHeader() {
 
     if (data) {
         return (
-            <div class="container-fluid">
-                <ul className="nav nav-tabs navbar-dark bg-dark">
-                    <li className="nav-item">
-                        {/* <a className="nav-link active" href={`${domain}/characters`}>Active</a> */}
-                        <NavLink className="nav-link" to="/characters">Characters</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        {/* <a className="nav-link" href={`${domain}/characters`}>Link</a> */}
-                        <NavLink className="nav-link" to="/rankings">Rankings</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        {/* <a className="nav-link" href={`${domain}/characters`}>Link</a> */}
-                        <NavLink className="nav-link" to="/users">Users</NavLink>
-                    </li>
-                    {/* <li className="nav-item">
-                        <div>{data[0].displayName}</div>
-                    </li> */}
-                </ul>
-            </div>
+            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div className="navbar-brand">RennScape</div>
+                <button 
+                    className="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbarNav" 
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/characters">
+                                Characters 
+                                {/* <span className="sr-only">(current)</span> */}
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" exact to="/">Rankings</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/users">Users</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         );
     } else {
         return <h1>Loading...</h1>
