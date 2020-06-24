@@ -144,12 +144,25 @@ label {
 .ranking-table-window {
   background-color: rgb(34, 34, 34);
   width: 82%;
+  /* height:100%; */
+  max-height: 78%;
   /* display: fixed; */
   align-items: center;
   margin-top: 6%;
   margin-bottom: 6%;
   margin-left: 9%;
   margin-right: 9%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
   box-shadow: 0px 0px 50px rgb(201, 201, 201);
+}
+
+.ranking-table {
+  text-align: center;
+}
+
+.ranking-table thead {
+  color: #f33622;
 }
 
