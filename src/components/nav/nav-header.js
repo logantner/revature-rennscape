@@ -21,7 +21,6 @@ export default function Header() {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/characters">
                             Characters 
-                            {/* <span className="sr-only">(current)</span> */}
                         </NavLink>
                     </li>
                     <li className="nav-item">
