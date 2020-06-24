@@ -3,7 +3,6 @@ import TitleCase from '../../general/title-case';
 
 export default function RankingsTab(props) {
     const setActiveTab = () => {
-        console.log(props)
         props.updateTab(props.name);
     }
 

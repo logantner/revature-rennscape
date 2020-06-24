@@ -167,6 +167,7 @@ label {
 }
 
 .character-tab {
+  cursor: crosshair;
   text-align: center;
   font-size: 25px;
   padding-top: 25px;

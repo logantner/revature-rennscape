@@ -6,13 +6,12 @@ function RankingsBody(props) {
     const rankings = props[`rankings_${attribute}`]
     const userKey = attribute === 'total' ? 'username' : 'displayName';
     const scoreKey = attribute === 'total' ? 'totalLevel' : attribute;
-    console.log(rankings);
 
     const rows = [];
     for (let idx=0; idx < rankings.length; ++idx) {
         let row = rankings[idx];
         rows.push(
-            <tr>
+            <tr key={`${attribute}-row-${idx+1}`}>
             <th scope="row">{idx+1}</th>
             <th scope="row">{row[userKey]}</th>
             <th scope="row">{row[scoreKey]}</th>

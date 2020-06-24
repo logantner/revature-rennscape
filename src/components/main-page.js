@@ -33,6 +33,7 @@ function MainPage(props) {
     }, [props]);
 
     if (loadingStatus === 200) {
+        console.log(document.cookie);
         return (
             <Router>
                 <Header />
