@@ -1,33 +1,24 @@
 import React from 'react';
+import RankingsSidebar from './rankings-sidebar'
+import RankingsBody from './rankings-body'
 
-export default function RankingsView(props) {
-    return (
-        <div className="wrapper">
-            <nav className="sidebar">
-                <div className="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
-                </div>
-                <ul className="list-unstyled components">
-                    <p>Dummy Heading</p>
-                    <li><a href="/#/">Total</a></li>
-                    <li><a href="/">Attack</a></li>
-                    <li><a href="/">Strength</a></li>
-                    <li><a href="/">Defence</a></li>
-                </ul>
-            </nav>
+export default class RankingsView extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {activeTab: 'total'};
+    }
 
-            <div id="content">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <a href="/" className="btn btn-success" id="menu-toggle">Toggle Menu</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
+    updateActiveTab = (newActive) => {
+        this.setState({activeTab: newActive});
+    }
 
-
-        </div>
-        
-    )
+    render() {
+        return (
+            <div className="wrapper">
+                <RankingsSidebar activeTab={this.state.activeTab}></RankingsSidebar>
+                <RankingsBody></RankingsBody>
+            </div>
+        )
+    }
+    
 }
