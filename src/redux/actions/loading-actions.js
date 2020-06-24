@@ -49,7 +49,7 @@ export const loadUsers = (users) => {
     };
 }
 
-export const loadUserInfo = (userInfo) => {
+export const updateUserInfo = (userInfo) => {
     return {
         type: types.LOAD_USER_INFO,
         userInfo

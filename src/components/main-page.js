@@ -75,8 +75,8 @@ function mapDispatchToProps(dispatch) {
             dispatch(loadingActions.loadRanksDefence(chars)),
         loadUsers: (chars) =>
             dispatch(loadingActions.loadUsers(chars)),
-        loadUserInfo: (chars) =>
-            dispatch(loadingActions.loadUserInfo(chars)),
+        updateUserInfo: (chars) =>
+            dispatch(loadingActions.updateUserInfo(chars)),
     };
   }
   
