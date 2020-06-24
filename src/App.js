@@ -16,8 +16,6 @@ function App() {
           <LoginPage></LoginPage>
         </Route>
         <Route exact path="/" component={MainPage} />
-          {/* <MainPage></MainPage>
-        </Route> */}
       </Switch>
     </Router>
   );

@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { connect } from "react-redux";
-// import {useDispatch} from 'react-redux'
+import { useHistory } from "react-router-dom";
 
+import { connect } from "react-redux";
 import {logIn} from '../../redux/actions/logger-actions'
 import LoginInput from "./auth-input"
 
 function LoginForm(props) {
     const [creds, setCreds] = useState({});
+    const history = useHistory();
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         axios.post("/auth/login", creds)
             .then((res) => {
-                console.log(res);
-                // console.log(props);
                 props.logIn();
+                history.push('/');
             })
             .catch((err) => {
                 if (err.response) {
@@ -48,7 +48,6 @@ function mapDispatchToProps(dispatch) {
     return {
       logIn: () =>
         dispatch(logIn()),
-        // dispatch({type: "LOG_IN"})
     };
   }
   

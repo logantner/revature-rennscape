@@ -166,3 +166,23 @@ label {
   color: #f33622;
 }
 
+.character-tab {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 10px;
+  background-color: rgb(15, 15, 15);
+}
+
+.character-tab.active {
+  background-color: rgb(6, 28, 75);
+}
+
+.character-tab:hover {
+  background-color: rgb(177, 102, 102);
+}
+
+.character-tab.active:hover {
+  background-color: rgb(177, 102, 102);
+}

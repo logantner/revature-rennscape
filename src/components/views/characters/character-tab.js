@@ -10,7 +10,6 @@ export default function CharacterTab(props) {
     return (
         <div className={classes} id={`${props.name}-tab`} onClick={setActiveTab}>
             {props.name}
-            {/* <TitleCase content={props.name} /> */}
         </div>
     )
 }
