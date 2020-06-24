@@ -1,15 +1,14 @@
 import React, {useEffect, useState}  from 'react';
-// import axios from 'axios'
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import Header from './nav/nav-header'
-import CharactersPage from './characters/characters-view'
+import CharactersPage from './views/characters/characters-view'
 import RankingsPage from './views/rankings/rankings-view'
-import UsersPage from './users/users-view'
+import UsersPage from './views/users/users-view'
 
 import * as loadingActions from '../redux/actions/loading-actions'
-// import {getCharacters, getRankings, getUsers, getUserInfo} from '../helpers/loading-helpers'
-import {getRankings} from '../helpers/loading-helpers'
+import {getCharacters, getRankings, getUsers, getUserInfo} from '../helpers/loading-helpers'
+// import {getRankings} from '../helpers/loading-helpers'
 
 function MainPage(props) {
     let [loadingStatus, setLoadingStatus] = useState(0);
@@ -17,15 +16,15 @@ function MainPage(props) {
     useEffect(() => {
         const storeMainPageData = async () => {
             let status = await getRankings(props);
-            // if (status === 200) {
-            //     status = await getUserInfo(props);
-            // }
-            // if (status === 200) {
-            //     status = await getCharacters(props);
-            // }
-            // if (status === 200) {
-            //     status = await getUsers(props);
-            // }
+            if (status === 200) {
+                status = await getUserInfo(props);
+            }
+            if (status === 200) {
+                status = await getCharacters(props);
+            }
+            if (status === 200) {
+                status = await getUsers(props);
+            }
             
             setLoadingStatus(status);
          }

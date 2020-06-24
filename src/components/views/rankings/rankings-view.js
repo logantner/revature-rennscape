@@ -20,5 +20,4 @@ export default class RankingsView extends React.Component {
             </div>
         )
     }
-    
 }
