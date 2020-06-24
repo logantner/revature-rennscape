@@ -8,15 +8,15 @@ export default class RankingsView extends React.Component {
         this.state = {activeTab: 'total'};
     }
 
-    updateActiveTab = (newActive) => {
-        this.setState({activeTab: newActive});
-    }
+    updateTab = (newTab) => {
+        this.setState({activeTab: newTab});
+    };
 
     render() {
         return (
             <div className="wrapper">
-                <RankingsSidebar activeTab={this.state.activeTab}></RankingsSidebar>
-                <RankingsBody></RankingsBody>
+                <RankingsSidebar activeTab={this.state.activeTab} updateTab={this.updateTab} />
+                <RankingsBody activeTab={this.state.activeTab} />
             </div>
         )
     }

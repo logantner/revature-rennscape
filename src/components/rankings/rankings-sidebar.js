@@ -7,7 +7,12 @@ export default function RankingsSidebar(props) {
 
     for (let tab of tabNames) {
         let isActive = tab === props.activeTab ? true : false;
-        tabs.push(<RankingsTab name={tab} isActive={isActive} key={`${tab}-tab`}></RankingsTab>);
+        tabs.push(<RankingsTab 
+            name={tab} 
+            updateTab={props.updateTab}
+            isActive={isActive}
+            key={`${tab}-tab`} 
+        />);
     }
 
     return (
@@ -17,8 +22,8 @@ export default function RankingsSidebar(props) {
                 <h3>Rankings</h3>
             </div>
             
-            <div className="row ranking-tabs"></div>
-                {tabs}
+            <div className="row ranking-tabs">{tabs}</div>
+                
             </div>
 
         </nav>
