@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleCase from '../general/title-case';
+import TitleCase from '../../general/title-case';
 
 export default function RankingsTab(props) {
     const setActiveTab = () => {

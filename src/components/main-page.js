@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import Header from './nav/nav-header'
 import CharactersPage from './characters/characters-view'
-import RankingsPage from './rankings/rankings-view'
+import RankingsPage from './views/rankings/rankings-view'
 import UsersPage from './users/users-view'
 
 import * as loadingActions from '../redux/actions/loading-actions'
