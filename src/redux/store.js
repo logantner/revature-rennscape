@@ -1,7 +1,7 @@
 import {createStore} from 'redux';
 import {combineReducers} from 'redux';
-import loggerReducer from './reducers/logger';
-import userRoleLoaderReducer from './reducers/user-role-loader'
+// import loggerReducer from './reducers/logger';
+// import userRoleLoaderReducer from './reducers/user-role-loader'
 import userCharactersLoaderReducer from './reducers/user-characters-loader'
 import rankingsTotalLoaderReducer from './reducers/rankings-total-loader'
 import rankingsAttackLoaderReducer from './reducers/rankings-attack-loader'
@@ -12,8 +12,8 @@ import userInfoUpdaterReducer from './reducers/user-info-updater'
 
 
 const allReducers = combineReducers({
-    isLoggedIn : loggerReducer, // legacy
-    userRole : userRoleLoaderReducer, // legacy
+    // isLoggedIn : loggerReducer, // legacy
+    // userRole : userRoleLoaderReducer, // legacy
     userCharacters : userCharactersLoaderReducer,
     rankingsTotal : rankingsTotalLoaderReducer,
     rankingsAttack : rankingsAttackLoaderReducer,
