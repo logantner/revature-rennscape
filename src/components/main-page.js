@@ -58,7 +58,7 @@ function MainPage(props) {
         );
     }
     else {
-        return <h1>Loading...</h1>
+        return <h1 id="loading-text">Loading...</h1>
     }
 }
 

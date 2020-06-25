@@ -311,3 +311,7 @@ label {
   margin-top: 0;
   color: #ff4b4b;
 }
+
+#loading-text {
+  color:white;
+}
