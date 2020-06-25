@@ -7,7 +7,7 @@ import LoginTab from './login-tab'
 
 function Header(props) {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark main-navbar">
             <div className="navbar-brand">RennScape</div>
             <button 
                 className="navbar-toggler" 

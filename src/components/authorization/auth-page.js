@@ -7,10 +7,6 @@ export default class LoginPage extends React.Component {
         super(props);
         document.body.style.backgroundImage = `url(${background})`
     }
-    
-    // componentWillUnmount = () => {
-    //     document.body.style.backgroundImage = null;
-    // }
 
     render() {
         return (
@@ -23,9 +19,7 @@ export default class LoginPage extends React.Component {
                         <div className="col-12 align-self-center login-form-box">
                             <LoginForm></LoginForm>
                         </div>
-                        <div className="col-12 align-self-end login-title-box">
-                            {/* Logout */}
-                        </div>
+                        <div className="col-12 align-self-end login-title-box"></div>
                     </div>
                 </div>
             </div>

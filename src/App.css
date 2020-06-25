@@ -49,6 +49,10 @@ body {
   height: 8vh;
 }
 
+.main-navbar {
+  background-color: black;
+}
+
 .login-app {
   height: 100vh;
   justify-content: center;

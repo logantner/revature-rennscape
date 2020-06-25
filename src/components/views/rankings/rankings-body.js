@@ -23,7 +23,6 @@ function RankingsBody(props) {
         <div id="content" className="container-fluid">
             <div className="row h-100">
                 <div className="col pre-scrollable ranking-table-window">
-                    The active tab is: {attribute}
                     <table className="table table-hover table-dark ranking-table">
                         <thead>
                             <tr>

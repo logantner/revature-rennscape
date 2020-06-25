@@ -12,8 +12,8 @@ import userInfoUpdaterReducer from './reducers/user-info-updater'
 
 
 const allReducers = combineReducers({
-    isLoggedIn : loggerReducer,
-    userRole : userRoleLoaderReducer,
+    isLoggedIn : loggerReducer, // legacy
+    userRole : userRoleLoaderReducer, // legacy
     userCharacters : userCharactersLoaderReducer,
     rankingsTotal : rankingsTotalLoaderReducer,
     rankingsAttack : rankingsAttackLoaderReducer,
