@@ -6,6 +6,7 @@ const userInfoupdaterReducer = (state={}, action) => {
         case LOAD_USER_INFO:
             return action.userInfo;
         case LOG_OUT:
+            console.log("ajskhakjdhs")
             return {loggedIn: false};
         default:
             return state;

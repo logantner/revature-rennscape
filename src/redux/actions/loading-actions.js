@@ -55,3 +55,9 @@ export const updateUserInfo = (userInfo) => {
         userInfo
     };
 }
+
+export const logoutUser = () => {
+    return {
+        type: types.LOG_OUT
+    };
+}

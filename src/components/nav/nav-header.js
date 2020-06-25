@@ -1,7 +1,11 @@
 import React from 'react';
-import {NavLink} from "react-router-dom"
+import { connect } from "react-redux";
 
-export default function Header() {
+import NavigatorTabs from './navigator-tabs'
+import LogoutTab from './logout-tab'
+import LoginTab from './login-tab'
+
+function Header(props) {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <div className="navbar-brand">RennScape</div>
@@ -16,21 +20,19 @@ export default function Header() {
             >
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/characters">
-                            Characters 
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" exact to="/">Rankings</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/users">Users</NavLink>
-                    </li>
-                </ul>
-            </div>
+            <NavigatorTabs />
+
+            {props.userInfo.loggedIn ? <LogoutTab/> : <LoginTab/>}
         </nav>
+
+        
     );
 }
+
+function mapStateToProps(store) {
+    return {
+        userInfo: store.userInfo,
+    }
+}
+
+export default connect(mapStateToProps)(Header);

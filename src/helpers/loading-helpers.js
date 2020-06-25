@@ -18,21 +18,53 @@ export async function getUsers(props) {
     );
 }
 
+// export async function getUserInfo(props) {
+//     return loadData(
+//         axios.get("/auth/status"),
+//         (response) => {
+//             if (response.data && response.data.username){
+//                 props.updateUserInfo({
+//                     loggedIn: true,
+//                     username: response.data.username,
+//                     role: response.data.password
+//                 });
+//             } else {
+//                 props.updateUserInfo({loggedIn: false});
+//             }
+//         }
+//     );
+// }
+
 export async function getUserInfo(props) {
-    return loadData(
-        axios.get("/auth/status"),
-        (response) => {
-            if (response.data && response.data.username){
-                props.updateUserInfo({
-                    loggedIn: true,
-                    username: response.data.username,
-                    role: response.data.password
-                });
-            } else {
-                props.updateUserInfo({loggedIn: false});
-            }
+    let status = {};
+    let code;
+    try {
+        let response = await axios.get("/auth/status");
+        if (response.data && response.data.username){
+            props.updateUserInfo({
+                loggedIn: true,
+                username: response.data.username,
+                role: response.data.password
+            });
+            status.loggedIn = true;
+            status.isAdmin = response.data.password > 1 ? true : false;
+        } else {
+            props.updateUserInfo({loggedIn: false});
+            status.loggedIn = false;
+            status.isAdmin = false;
         }
-    );
+
+        code = 200;
+    } catch (err) {
+        console.error(err);
+            if (err.response) {
+                code = 400;
+            }
+            code = 500;
+    } finally {
+        status.code = code;
+        return status;
+    }
 }
 
 export async function getRankings(props) {

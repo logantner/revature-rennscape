@@ -6,34 +6,35 @@ import CharactersPage from './views/characters/characters-view'
 import RankingsPage from './views/rankings/rankings-view'
 import UsersPage from './views/users/users-view'
 
+import background from '../img/Background.png';
+
 import * as loadingActions from '../redux/actions/loading-actions'
 import {getCharacters, getRankings, getUsers, getUserInfo} from '../helpers/loading-helpers'
-// import {getRankings} from '../helpers/loading-helpers'
 
 function MainPage(props) {
+    document.body.style.backgroundImage = `url(${background})`
     let [loadingStatus, setLoadingStatus] = useState(0);
 
     useEffect(() => {
         const storeMainPageData = async () => {
-            let status = await getRankings(props);
-            if (status === 200) {
-                status = await getUserInfo(props);
+            const userStatus = await getUserInfo(props);
+            let loadCode = userStatus.code;
+            if (loadCode === 200) {
+                loadCode = await getRankings(props);
             }
-            if (status === 200) {
-                status = await getCharacters(props);
+            if (loadCode === 200 && userStatus.loggedIn) {
+                loadCode = await getCharacters(props);
             }
-            if (status === 200) {
-                status = await getUsers(props);
+            if (loadCode === 200 && userStatus.isAdmin) {
+                loadCode = await getUsers(props);
             }
-            
-            setLoadingStatus(status);
+            setLoadingStatus(loadCode);
          }
-
-         storeMainPageData();        
-    }, [props]);
+         
+        storeMainPageData();      
+    }, []);
 
     if (loadingStatus === 200) {
-        console.log(document.cookie);
         return (
             <Router>
                 <Header />
@@ -61,6 +62,12 @@ function MainPage(props) {
     }
 }
 
+function mapStateToProps(store) {
+    return {
+        userInfo: store.userInfo,
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         loadUserCharacters: (chars) =>
@@ -80,4 +87,4 @@ function mapDispatchToProps(dispatch) {
     };
   }
   
-  export default connect(null, mapDispatchToProps)(MainPage);
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
