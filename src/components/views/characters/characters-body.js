@@ -1,25 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import StatBox from './stat-box'
+import StatCard from './stat-card'
 
  function CharactersBody(props) {
-    const stats = ['attack', 'strength', 'defence'];
     let charInfo = props.chars.find(info => info.displayName === props.activeTab);
-
-    const statElements = stats.map((stat) => {
-        return (<StatBox 
-            stat={stat}
-            statVal={charInfo[stat]}
-            key={`${props.activeTab}-${stat}`}
-        />);
-    })
 
     return (
         <div id="content" className="container-fluid">
-            <div className="row h-100">
-                <div className="col align-self-center">
-                    {props.activeTab}!
-                    {statElements}
+            <div className="row h-100 justify-content-center">
+                <div className="col-lg-3 col-sm-12 align-self-center">
+                    <StatCard stat="Attack" value={charInfo.attack}/>
+                </div>
+                <div className="col-lg-3 col-sm-12  align-self-center">
+                    <StatCard stat="Strength" value={charInfo.strength}/>
+                </div>
+                <div className="col-lg-3 col-sm-12  align-self-center">
+                    <StatCard stat="Defence" value={charInfo.defence}/>
                 </div>
             </div>
         </div>

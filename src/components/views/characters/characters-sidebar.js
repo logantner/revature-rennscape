@@ -18,12 +18,16 @@ function CharactersSidebar(props) {
 
     return (
         <nav className="sidebar">
-            <div className="container-fluid sidebar-container">
+            {/* <div className="container-fluid sidebar-container"> */}
                 <div className="sidebar-header">
                     <h3>Characters</h3>
                 </div>
-                <div className="row ranking-tabs">{tabs}</div>
-            </div>
+
+                <ul className="row char-tabs-box align-items-center justify-content-center">
+                    {tabs}
+                    {/* <div className="row ranking-tabs">{tabs}</div> */}
+                </ul>
+            {/* </div> */}
         </nav>
     )
 }

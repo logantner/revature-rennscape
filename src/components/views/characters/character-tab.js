@@ -5,11 +5,12 @@ export default function CharacterTab(props) {
         props.updateTab(props.name);
     }
 
-    let classes = `col-12 character-tab ${props.isActive ? "active" : ""}`
+    let classes = `col-12 character-tab ${props.isActive ? "active" : ""} align-self-start`
+    let divStyle = {"font-size":"15px", }
 
     return (
-        <div className={classes} id={`${props.name}-tab`} onClick={setActiveTab}>
+        <li style={divStyle} className={classes} id={`${props.name}-tab`} onClick={setActiveTab}>
             {props.name}
-        </div>
+        </li>
     )
 }

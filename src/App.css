@@ -39,7 +39,8 @@
 
 body {
   /* background-image: url("Background.png"); */
-  background: #9b3e00;
+  /* background: #9b3e00; */
+  background: black;
   display: flex;
   flex-direction: column;
 }
@@ -108,17 +109,22 @@ label {
 }
 
 .sidebar {
+  display:block;
   height: 100%;
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 300px;
+  max-width: 300px;
   color: antiquewhite;
-  background-color: #470902;
+  background-color: #02102b;
+  border-right-style: solid;
+  border-right-color: white;
+  border-right-width: 1px;
 }
 
 .sidebar-header {
   text-align: center;
   margin-top: 4vh;
   margin-bottom: 4vh;
+
 }
 
 .ranking-tab {
@@ -127,15 +133,16 @@ label {
   padding-top: 25px;
   padding-bottom: 25px;
   margin-bottom: 10px;
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(32, 32, 32);
 }
 
 .ranking-tab:hover {
   background-color: rgb(177, 102, 102);
+  transition: 0.4s;
 }
 
 .ranking-tab.active {
-  background-color: rgb(6, 28, 75);
+  background-color: rgb(90, 4, 30);
 }
 
 .ranking-tab.active:hover {
@@ -167,26 +174,117 @@ label {
   color: #f33622;
 }
 
+.char-tabs-box {
+  /* background-color: aqua; */
+  width: 270px;
+  /* margin-left: 5px; */
+  height: 65%;
+  margin-left: 15px;
+  /* min-height: 60vh;
+  max-height: 60vh; */
+  overflow-y: scroll;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  background-color: #021436;
+}
+
 .character-tab {
-  cursor: crosshair;
+  /* margin: auto; */
+  list-style-type: none;
+  min-width:190px;
+  max-width:190px;
+  cursor: pointer;
   text-align: center;
   font-size: 25px;
   padding-top: 25px;
   padding-bottom: 25px;
   margin-bottom: 10px;
-  background-color: rgb(15, 15, 15);
+  margin-right: 35px;
+  margin-top: 10px;
+  background-color: rgb(22, 22, 22);
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgb(99, 99, 99);
+  border-width: 1pt;
 }
 
 .character-tab.active {
-  background-color: rgb(6, 28, 75);
+  background-color: rgb(90, 4, 30);
 }
 
 .character-tab:hover {
   background-color: rgb(177, 102, 102);
+  /* box-shadow: 0px 0px 30px rgb(122, 90, 1); */
+  /* color: rgb(0, 0, 0); */
+  transition:0.4s;
 }
 
 .character-tab.active:hover {
   background-color: rgb(177, 102, 102);
+}
+
+.stat-card {
+  width: 18rem;
+  text-align: center;
+  font-size: 62pt;
+  border-radius: 15px;
+  box-shadow: 0 0 50pt black;
+}
+
+.Attack-stat-card {
+  border-color: red;
+  border-width: 4px;
+  
+}
+
+.Attack-card-header {
+  border-color: red;
+  background-color: red;
+  color: white;
+  text-shadow: 0 0 5px black;
+  border-width: 4px;
+}
+
+.Attack-card-body {
+  color: red;
+  text-shadow: 0 0 1px black;
+}
+
+.Strength-stat-card {
+  border-color: purple;
+  border-width: 4px;
+}
+
+.Strength-card-header {
+  border-color: purple;
+  background-color: purple;
+  color: white;
+  text-shadow: 0 0 5px black;
+  border-width: 4px;
+}
+
+.Strength-card-body {
+  color: purple;
+  text-shadow: 0 0 1px black;
+}
+
+.Defence-stat-card {
+  border-color: #05079e;
+  border-width: 4px;
+}
+
+.Defence-card-header {
+  border-color: #05079e;
+  background-color: #05079e;
+  color: white;
+  text-shadow: 0 0 5px black;
+  border-width: 4px;
+}
+
+.Defence-card-body {
+  color: #05079e;
+  text-shadow: 0 0 1px black;
 }
 
 .logger-tab {
@@ -207,7 +305,5 @@ label {
   height:40px;
   text-align: left;
   margin-top: 0;
-  /* background-color:#475; */
-  /* overflow:scroll; */
   color: #ff4b4b;
 }

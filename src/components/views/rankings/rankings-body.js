@@ -27,9 +27,9 @@ function RankingsBody(props) {
                     <table className="table table-hover table-dark ranking-table">
                         <thead>
                             <tr>
-                            <th scope="col">Rank</th>
-                            <th scope="col">Character</th>
-                            <th scope="col">{attribute} Level</th>
+                            <th scope="col" style={{"width":"20%"}}>Rank</th>
+                            <th scope="col" style={{"width":"50%"}}>Character</th>
+                            <th scope="col" style={{"width":"30%"}}>{attribute} Level</th>
                             </tr>
                         </thead>
                         <tbody>{rows}</tbody>
