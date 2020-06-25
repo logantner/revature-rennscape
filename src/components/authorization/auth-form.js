@@ -8,6 +8,7 @@ import LoginInput from "./auth-input"
 
 function LoginForm(props) {
     const [creds, setCreds] = useState({});
+    const [warning, setWarning] = useState("");
     const history = useHistory();
 
     const handleSubmit = (event) => {
@@ -20,6 +21,7 @@ function LoginForm(props) {
             })
             .catch((err) => {
                 if (err.response) {
+                    setWarning("Username or password is incorrect");
                     console.error(err.response.status);
                 } else {
                     console.error(err);
@@ -35,10 +37,9 @@ function LoginForm(props) {
 
     return (
         <form className="login-form" onSubmit={handleSubmit}>
-
-            <LoginInput name="username" onChange={handleChange}></LoginInput>
-            <LoginInput name="password" onChange={handleChange}></LoginInput>
-            <br/>
+            <LoginInput name="username" type="text" onChange={handleChange}></LoginInput>
+            <LoginInput name="password" type="password" onChange={handleChange}></LoginInput>
+            <div className="login-warning"> {warning} </div>
             <button className="btn btn-block btn-primary">Login</button>
         </form>
     );

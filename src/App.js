@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import LoginPage from './components/authorization/auth-page';
 import MainPage from './components/main-page';
+import UnknownPage from './components/unknown/unknown-page'
 import axios from "axios";
 
 axios.defaults.baseURL = "http://13.56.200.157:8082";
@@ -16,6 +17,9 @@ function App() {
           <LoginPage></LoginPage>
         </Route>
         <Route exact path="/" component={MainPage} />
+        <Route>
+          <UnknownPage />
+        </Route>
       </Switch>
     </Router>
   );

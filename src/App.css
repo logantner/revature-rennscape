@@ -192,3 +192,22 @@ label {
 .logger-tab {
   cursor: pointer;
 }
+
+.unknown-box {
+  color: white;
+}
+
+.unknown-title {
+  padding-top: 30px;
+}
+
+.login-warning {
+  display:block;
+  width:100%;
+  height:40px;
+  text-align: left;
+  margin-top: 0;
+  /* background-color:#475; */
+  /* overflow:scroll; */
+  color: #ff4b4b;
+}
